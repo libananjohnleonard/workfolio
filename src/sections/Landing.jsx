@@ -14,7 +14,9 @@ function Landing() {
     Promise.all([import('three'), import('vanta/dist/vanta.clouds.min')]).then(([THREE, cloudsModule]) => {
       if (!isMounted || !landingRef.current || vantaRef.current) return
 
-      const CLOUDS = cloudsModule.default
+      const CLOUDS = cloudsModule.default?.default ?? cloudsModule.default
+      if (typeof CLOUDS !== 'function') return
+
       vantaRef.current = CLOUDS({
         el: landingRef.current,
         THREE,
@@ -23,13 +25,6 @@ function Landing() {
         gyroControls: false,
         minHeight: 200.0,
         minWidth: 200.0,
-        skyColor: 0xecfeff,
-        cloudColor: 0xffffff,
-        cloudShadowColor: 0x93c5d6,
-        sunColor: 0x67e8f9,
-        sunGlareColor: 0xe0f2fe,
-        sunlightColor: 0x0e7490,
-        speed: 0.7,
       })
     })
 
@@ -63,8 +58,13 @@ function Landing() {
             & FULL-STACK DEVELOPER
           </h1>
           <h3 className="landing-copy">
-            I turn practical ideas into polished
-            <span className="landing-rotating-text" key={rotatingLandingWords[rotatingWordIndex]}>
+            I turn practical ideas into polished{' '}
+            <span
+              className="landing-rotating-text"
+              key={rotatingLandingWords[rotatingWordIndex]}
+              aria-live="polite"
+              aria-atomic="true"
+            >
               {rotatingLandingWords[rotatingWordIndex]}
             </span>
             <br />
