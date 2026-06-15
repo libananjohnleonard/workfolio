@@ -18,8 +18,8 @@ function LinkedInMark({ className }) {
 
 function Contact() {
   const contactLinks = [
-    { label: 'GH', href: 'https://github.com/', ariaLabel: 'GitHub', tooltip: 'github.com' },
-    { label: 'IN', href: 'https://www.linkedin.com/', ariaLabel: 'LinkedIn', tooltip: 'linkedin.com' },
+    { label: 'GH', href: 'https://github.com/libananjohnleonard', ariaLabel: 'GitHub', tooltip: 'github.com/libananjohnleonard' },
+    { label: 'IN', href: 'https://www.linkedin.com/in/johnleonardlibanan', ariaLabel: 'LinkedIn', tooltip: 'linkedin.com/in/johnleonardlibanan' },
     {
       label: '@',
       href: 'mailto:johnleonardlibanan.work@gmail.com',

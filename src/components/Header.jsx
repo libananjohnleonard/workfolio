@@ -46,10 +46,10 @@ function Header() {
         </div>
 
         <div className="header-actions">
-          <a href="https://github.com/" target="_blank" rel="noreferrer" className="header-icon-button" aria-label="GitHub" data-tooltip="github.com">
+          <a href="https://github.com/libananjohnleonard" target="_blank" rel="noreferrer" className="header-icon-button" aria-label="GitHub" data-tooltip="github.com/libananjohnleonard">
             <GitHubMark className="h-4 w-4" />
           </a>
-          <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer" className="header-icon-button" aria-label="LinkedIn" data-tooltip="linkedin.com">
+          <a href="https://www.linkedin.com/in/johnleonardlibanan" target="_blank" rel="noreferrer" className="header-icon-button" aria-label="LinkedIn" data-tooltip="linkedin.com/in/johnleonardlibanan">
             <LinkedInMark className="h-4 w-4" />
           </a>
           <a href="mailto:johnleonardlibanan.work@gmail.com" className="header-icon-button" aria-label="Email" data-tooltip="johnleonardlibanan.work@gmail.com">

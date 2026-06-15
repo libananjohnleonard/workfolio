@@ -225,29 +225,23 @@ button {
       transform 160ms ease;
   }
 
-  .header-icon-button[data-tooltip]:hover::before,
-  .header-icon-button[data-tooltip]:hover::after,
-  .header-icon-button[data-tooltip]:focus::before,
-  .header-icon-button[data-tooltip]:focus::after,
-  .contact-social-icons a[data-tooltip]:hover::before,
-  .contact-social-icons a[data-tooltip]:hover::after,
-  .contact-social-icons a[data-tooltip]:focus::before,
-  .contact-social-icons a[data-tooltip]:focus::after {
-    opacity: 1;
-  }
+  @media (hover: hover) and (pointer: fine) {
+    .header-icon-button[data-tooltip]:hover::before,
+    .header-icon-button[data-tooltip]:hover::after,
+    .contact-social-icons a[data-tooltip]:hover::before,
+    .contact-social-icons a[data-tooltip]:hover::after {
+      opacity: 1;
+    }
 
-  .header-icon-button[data-tooltip]:hover::before,
-  .header-icon-button[data-tooltip]:focus::before,
-  .contact-social-icons a[data-tooltip]:hover::before,
-  .contact-social-icons a[data-tooltip]:focus::before {
-    transform: translate(-50%, 0);
-  }
+    .header-icon-button[data-tooltip]:hover::before,
+    .contact-social-icons a[data-tooltip]:hover::before {
+      transform: translate(-50%, 0);
+    }
 
-  .header-icon-button[data-tooltip]:hover::after,
-  .header-icon-button[data-tooltip]:focus::after,
-  .contact-social-icons a[data-tooltip]:hover::after,
-  .contact-social-icons a[data-tooltip]:focus::after {
-    transform: translate(-50%, -50%) rotate(45deg);
+    .header-icon-button[data-tooltip]:hover::after,
+    .contact-social-icons a[data-tooltip]:hover::after {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
   }
 
   .header-resume-button {
@@ -1989,7 +1983,7 @@ button {
   }
 
   .landing-content h1 {
-    font-size: 1.85rem;
+    font-size: clamp(1.45rem, 8vw, 1.7rem);
   }
 }
 
@@ -2739,7 +2733,7 @@ body {
   border: 0;
   border-radius: 0;
   background: transparent;
-  padding: 0;
+  padding: 0 1.5rem;
   box-shadow: none;
   backdrop-filter: none;
 }
@@ -2841,10 +2835,34 @@ body {
 
 .landing-layout {
   border-bottom: 1px solid #e2e8f0;
-  background: #f8feff;
+  background: #ecfeff;
   --hero-grid-size: 40px;
   --cursor-x: -20rem;
   --cursor-y: -20rem;
+}
+
+.landing-layout::before {
+  display: none;
+}
+
+.landing-layout canvas {
+  position: absolute !important;
+  inset: 0;
+  z-index: 0 !important;
+}
+
+.landing-lightfall {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  min-height: 100%;
+}
+
+.landing-shape-grid {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: none;
 }
 
 .landing-grid-bg {
@@ -2918,7 +2936,6 @@ body {
   inset: 0;
   z-index: 0;
   background: #ffffff;
-  mask-image: radial-gradient(ellipse at center, transparent 20%, black);
 }
 
 .landing-layout::after {
@@ -2926,6 +2943,8 @@ body {
 }
 
 .landing-content-wrap {
+  position: relative;
+  z-index: 2;
   grid-template-columns: minmax(0, 1fr);
   gap: 0;
   padding-block: clamp(5rem, 12vh, 8rem);
@@ -2950,6 +2969,15 @@ body {
   color: #0f172a;
 }
 
+.landing-content,
+.landing-content h1 {
+  color: #0f172a;
+}
+
+.landing-content {
+  text-shadow: 0 1px 12px rgba(255, 255, 255, 0.34);
+}
+
 .landing-copy,
 .about-copy p:not(.section-kicker),
 .about-education span,
@@ -2967,6 +2995,15 @@ body {
   color: #475569;
 }
 
+.landing-copy {
+  color: #475569;
+}
+
+.landing-eyebrow,
+.landing-copy span {
+  color: #0e7490;
+}
+
 .landing-copy .landing-rotating-text,
 .project-card-tech small,
 .experience-item-icon,
@@ -2974,6 +3011,13 @@ body {
   border-color: rgba(14, 116, 144, 0.18);
   background: #ecfeff;
   color: #0e7490;
+}
+
+.landing-copy .landing-rotating-text {
+  border-color: rgba(14, 116, 144, 0.18);
+  background: #ecfeff;
+  color: #0e7490;
+  box-shadow: rgba(14, 116, 144, 0.08) 0px 0px 0px 1px;
 }
 
 .about-section,
@@ -3114,10 +3158,14 @@ body {
 }
 
 @media (max-width: 700px) {
+  .site-container {
+    padding-inline: 1.25rem;
+  }
+
   .header-nav {
     grid-template-columns: 1fr auto;
     width: 100%;
-    padding: 0.75rem 1rem;
+    padding: 0.75rem 1.25rem;
   }
 
   .header-logo img {
@@ -3135,7 +3183,17 @@ body {
 
   .landing-content-wrap {
     grid-template-columns: 1fr;
+    justify-items: start;
     padding-block: clamp(4.75rem, 15vh, 7rem) 3rem;
+  }
+
+  .landing-content {
+    max-width: 100%;
+    text-align: left;
+  }
+
+  .landing-actions {
+    justify-content: flex-start;
   }
 }
 

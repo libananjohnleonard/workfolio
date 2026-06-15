@@ -34,8 +34,8 @@ export const navItems = [
 ]
 
 export const socials = [
-  { label: 'GitHub', href: 'https://github.com/', icon: GitBranch },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/', icon: Network },
+  { label: 'GitHub', href: 'https://github.com/libananjohnleonard', icon: GitBranch },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/johnleonardlibanan', icon: Network },
   { label: 'Gmail', href: 'mailto:johnleonard.libanan@gmail.com', icon: Mail },
 ]
 
