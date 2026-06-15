@@ -1,4 +1,4 @@
-import logoDefault from '../assets/images/Logo-images/Logo-Default.png'
+import logoDefault from '../assets/images/Logo-images/Logo-default.png'
 
 function Footer() {
   return (
