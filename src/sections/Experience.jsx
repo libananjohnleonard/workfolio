@@ -1,6 +1,20 @@
 import { useState } from 'react'
 import { timeline } from '../data/portfolio'
 
+function renderDetailText(text) {
+  return text.split(/(\{[^}]+\})/g).map((part, index) => {
+    if (part.startsWith('{') && part.endsWith('}')) {
+      return (
+        <span key={index} className="experience-detail-tech">
+          {part.slice(1, -1)}
+        </span>
+      )
+    }
+
+    return part
+  })
+}
+
 function Experience() {
   const [activeCertificate, setActiveCertificate] = useState(null)
 
@@ -51,7 +65,7 @@ function Experience() {
                   {item.details && (
                     <ul>
                       {item.details.map((detail) => (
-                        <li key={detail}>{detail}</li>
+                        <li key={detail}>{renderDetailText(detail)}</li>
                       ))}
                     </ul>
                   )}

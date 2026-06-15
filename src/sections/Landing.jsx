@@ -1,11 +1,8 @@
-import { useEffect, useRef, useState } from 'react'
-
-const rotatingLandingWords = ['web apps', 'dashboards', 'business systems', 'digital experiences']
+import { useEffect, useRef } from 'react'
 
 function Landing() {
   const landingRef = useRef(null)
   const vantaRef = useRef(null)
-  const [rotatingWordIndex, setRotatingWordIndex] = useState(0)
 
   useEffect(() => {
     if (!landingRef.current || vantaRef.current) return undefined
@@ -37,14 +34,6 @@ function Landing() {
     }
   }, [])
 
-  useEffect(() => {
-    const wordTimer = window.setInterval(() => {
-      setRotatingWordIndex((index) => (index + 1) % rotatingLandingWords.length)
-    }, 2200)
-
-    return () => window.clearInterval(wordTimer)
-  }, [])
-
   return (
     <section id="home" ref={landingRef} className="landing-layout" aria-label="Landing section">
       <div className="landing-content-wrap site-container">
@@ -58,15 +47,7 @@ function Landing() {
             & FULL-STACK DEVELOPER
           </h1>
           <h3 className="landing-copy">
-            I turn practical ideas into polished{' '}
-            <span
-              className="landing-rotating-text"
-              key={rotatingLandingWords[rotatingWordIndex]}
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              {rotatingLandingWords[rotatingWordIndex]}
-            </span>
+            I turn practical ideas into polished <span>digital experiences</span>
             <br />
             built with clean interfaces, reliable logic, and thoughtful user flows
             <br />

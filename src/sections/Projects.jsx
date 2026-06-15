@@ -70,6 +70,30 @@ function Projects() {
           ))}
         </div>
 
+        <div className="project-slider-nav" aria-label="Project slider navigation" data-reveal>
+          <button type="button" onClick={showPreviousProject} aria-label="Previous project set">
+            <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+          </button>
+          <div className="project-slider-dots" aria-label="Project page selector">
+            {Array.from({ length: projectPageCount }, (_, index) => (
+              <button
+                key={index}
+                type="button"
+                className={index === activeProjectPage ? 'is-active' : ''}
+                onClick={() =>
+                  setActiveProjectIndex(
+                    Math.min(index * visibleProjectCount + 1, projects.length - 1),
+                  )
+                }
+                aria-label={`Show project set ${index + 1}`}
+              />
+            ))}
+          </div>
+          <button type="button" onClick={showNextProject} aria-label="Next project set">
+            <ChevronRight className="h-5 w-5" aria-hidden="true" />
+          </button>
+        </div>
+
         <div className="project-slider" aria-label="Project slider" data-reveal>
           <div
             key={activeProjectIndex}
@@ -108,30 +132,6 @@ function Projects() {
                 </article>
               )
             })}
-          </div>
-
-          <div className="project-slider-nav">
-            <button type="button" onClick={showPreviousProject} aria-label="Previous project set">
-              <ChevronLeft className="h-5 w-5" aria-hidden="true" />
-            </button>
-            <div className="project-slider-dots" aria-label="Project page selector">
-              {Array.from({ length: projectPageCount }, (_, index) => (
-                <button
-                  key={index}
-                  type="button"
-                  className={index === activeProjectPage ? 'is-active' : ''}
-                  onClick={() =>
-                    setActiveProjectIndex(
-                      Math.min(index * visibleProjectCount + 1, projects.length - 1),
-                    )
-                  }
-                  aria-label={`Show project set ${index + 1}`}
-                />
-              ))}
-            </div>
-            <button type="button" onClick={showNextProject} aria-label="Next project set">
-              <ChevronRight className="h-5 w-5" aria-hidden="true" />
-            </button>
           </div>
         </div>
       </div>

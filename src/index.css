@@ -633,31 +633,8 @@ button {
 }
 
 .landing-copy span {
-  color: #FFFFFF;
-}
-
-.landing-copy .landing-rotating-text {
-  display: inline;
-  padding: 0 0.12em;
   color: #0e7490;
   font-weight: 600;
-  background: linear-gradient(
-    transparent 18%,
-    rgba(165, 243, 252, 0.7) 18%,
-    rgba(165, 243, 252, 0.7) 92%,
-    transparent 92%
-  );
-  animation: rotating-text-in 320ms ease both;
-}
-
-@keyframes rotating-text-in {
-  from {
-    opacity: 0;
-  }
-
-  to {
-    opacity: 1;
-  }
 }
 
 .landing-actions {
@@ -735,28 +712,51 @@ button {
 
 .about-education {
   display: grid;
-  gap: 0.25rem;
-  margin-top: 1rem;
-  border-left: 3px solid #A855F7;
-  background: #221E29;
-  padding: 0.85rem 1rem;
+  gap: 0.4rem;
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem;
+  border: 1px solid rgba(14, 116, 144, 0.14);
+  border-left: 3px solid #0e7490;
+  border-radius: 0.85rem;
+  background: linear-gradient(145deg, #ffffff 0%, #f0fdfa 100%);
+  box-shadow: 0 10px 28px rgba(14, 116, 144, 0.07);
+}
+
+.about-education-label {
+  margin: 0;
+  color: #0e7490;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .about-education strong {
   color: #0f172a;
-  font-weight: 800;
+  font-weight: 700;
+  font-size: 1.02em;
   line-height: 1.35;
 }
 
-.about-education span,
-.about-education small {
+.about-education span {
   color: #475569;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.45;
 }
 
 .about-education small {
-  font-size: 0.9em;
+  display: inline-flex;
+  width: fit-content;
+  margin-top: 0.2rem;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  background: rgba(14, 116, 144, 0.08);
+  color: #0e7490;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
 }
 
 .about-project-link {
@@ -964,6 +964,11 @@ button {
   margin-bottom: 0.65rem;
   color: #334155;
   font-weight: 700;
+}
+
+.experience-detail-tech {
+  color: #0e7490;
+  font-weight: 600;
 }
 
 .experience-item-body ul {
@@ -1181,19 +1186,13 @@ button {
 .project-list button:hover,
 .project-list button:focus,
 .project-list button.is-active {
-  background: #f8fafc;
-  color: #475569;
+  background: #ecfeff;
+  color: #0e7490;
   outline: none;
   box-shadow:
-    0 0 0 1px rgba(168, 85, 247, 0.42),
-    0 0 0 3px rgba(236, 254, 255, 0.85);
+    0 0 0 1px rgba(14, 116, 144, 0.28),
+    0 0 0 3px rgba(236, 254, 255, 0.9);
   transform: translateY(-0.5px);
-}
-
-.project-slider {
-  display: grid;
-  gap: 1.25rem;
-  margin-top: 1rem;
 }
 
 .project-slider-nav {
@@ -1201,6 +1200,13 @@ button {
   align-items: center;
   justify-content: center;
   gap: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.project-slider {
+  display: grid;
+  margin-top: 0.75rem;
 }
 
 .project-slider-nav > button {
@@ -1222,18 +1228,29 @@ button {
 }
 
 .project-slider-nav > button:hover {
-  border-color: #A855F7;
-  background: #221E29;
-  color: #A855F7;
+  border-color: #0e7490;
+  background: #ecfeff;
+  color: #0e7490;
   transform: translateY(-1px);
 }
 
 .project-slider-nav > button:focus {
-  outline: 2px solid transparent;
-  outline-offset: 2px;
-  box-shadow:
-    0 0 0 2px #ffffff,
-    0 0 0 4px rgba(168, 85, 247, 0.35);
+  outline: none;
+}
+
+.project-slider-nav > button:focus-visible {
+  border-color: #0e7490;
+  background: #ecfeff;
+  color: #0e7490;
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.2);
+}
+
+.project-slider-nav > button:active {
+  border-color: #0e7490;
+  background: #cffafe;
+  color: #0e7490;
+  box-shadow: 0 0 0 2px rgba(14, 116, 144, 0.16);
+  transform: translateY(0);
 }
 
 .project-card-grid {
@@ -1253,6 +1270,7 @@ button {
 .project-card {
   display: grid;
   grid-template-rows: minmax(16rem, 1fr) auto auto;
+  gap: 0.65rem;
   overflow: hidden;
   min-width: 0;
   min-height: 28.5rem;
@@ -1265,8 +1283,8 @@ button {
 
 .project-card.is-active {
   box-shadow:
-    rgba(168, 85, 247, 0.22) 0px 0px 0px 1px,
-    rgba(168, 85, 247, 0.08) 0px 10px 24px;
+    rgba(14, 116, 144, 0.22) 0px 0px 0px 1px,
+    rgba(14, 116, 144, 0.08) 0px 10px 24px;
 }
 
 @keyframes project-page-enter {
@@ -1304,8 +1322,8 @@ button {
 .project-card-description {
   display: grid;
   align-content: start;
-  gap: 0.25rem;
-  padding: 0.75rem 0.9rem 0.65rem;
+  gap: 0.45rem;
+  padding: 0.35rem 0.9rem 0.25rem;
 }
 
 .project-card-description > span {
@@ -1340,19 +1358,21 @@ button {
 .project-card-tech {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.32rem;
+  gap: 0.45rem;
   align-content: start;
   border-top: 1px solid #e2e8f0;
-  padding: 0.55rem 0.9rem 0.65rem;
+  padding: 0.75rem 0.9rem 0.85rem;
 }
 
 .project-card-tech small {
+  border: 0;
   border-radius: 999px;
-  background: #221E29;
-  padding: 0.22rem 0.46rem;
-  color: #A855F7;
-  font-size: 0.68rem;
-  font-weight: 800;
+  background: #f8fafc;
+  padding: 0.28rem 0.55rem;
+  color: #475569;
+  font-size: 0.82rem;
+  font-weight: 500;
+  line-height: 1.45;
 }
 
 .project-slider-dots {
@@ -1363,26 +1383,31 @@ button {
 }
 
 .project-slider-dots button {
-  width: 0.68rem;
-  height: 0.68rem;
+  width: 1.85rem;
+  height: 0.34rem;
   border: 0;
-  border-radius: 999px;
+  border-radius: 0.35rem;
   background: #cbd5e1;
   padding: 0;
   transition:
     background-color 180ms ease,
-    transform 180ms ease;
+    width 180ms ease;
 }
 
 .project-slider-dots button.is-active {
-  background: #A855F7;
-  transform: scale(1.25);
+  width: 2.35rem;
+  background: #0e7490;
 }
 
 .project-slider-dots button:hover,
 .project-slider-dots button:focus {
-  background: #A855F7;
+  background: #94d0e0;
   outline: none;
+}
+
+.project-slider-dots button.is-active:hover,
+.project-slider-dots button.is-active:focus {
+  background: #0e7490;
 }
 
 .contact-section {
@@ -1717,7 +1742,6 @@ button {
 .project-list button:hover,
 .project-list button:focus,
 .project-list button.is-active,
-.project-slider-nav > button:hover,
 .certificate-list button:hover,
 .contact-button-row a + a:hover,
 .contact-button-row a + a:focus,
@@ -1809,7 +1833,7 @@ button {
     padding: 0.55rem 0.8rem;
     color: rgba(255, 255, 255, 0.74);
     font-size: 0.78rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 0.04em;
     text-align: center;
     text-transform: uppercase;
@@ -2112,7 +2136,6 @@ body {
 .project-list button:hover,
 .project-list button:focus,
 .project-list button.is-active,
-.project-slider-nav > button:hover,
 .certificate-list button:hover,
 .contact-button-row a + a:hover,
 .contact-button-row a + a:focus,
@@ -2237,7 +2260,6 @@ body {
 
 .header-menu-button:focus,
 .back-to-top-button:focus,
-.project-slider-nav > button:focus,
 .certificate-list button:focus {
   box-shadow:
     0 0 0 2px var(--color-bg),
@@ -2392,7 +2414,6 @@ body {
 .contact-button-row a + a:focus,
 .contact-social-icons a:hover,
 .contact-social-icons a:focus,
-.project-slider-nav > button:hover,
 .certificate-list button:hover {
   border-color: rgba(168, 85, 247, 0.42);
   background: rgba(168, 85, 247, 0.2);
@@ -2431,7 +2452,6 @@ body {
 .project-list button:hover,
 .project-list button:focus,
 .project-list button.is-active,
-.project-slider-nav > button:hover,
 .certificate-list button:hover,
 .contact-button-row a + a:hover,
 .contact-button-row a + a:focus,
@@ -2490,7 +2510,6 @@ body {
 .project-list button:hover,
 .project-list button:focus,
 .project-list button.is-active,
-.project-slider-nav > button:hover,
 .certificate-list button:hover,
 .contact-button-row a + a:hover,
 .contact-button-row a + a:focus,
@@ -2770,7 +2789,7 @@ body {
 
 .header-links a {
   font-size: 0.875rem;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -3004,12 +3023,15 @@ body {
   color: #475569;
 }
 
-.landing-eyebrow,
-.landing-copy span {
+.landing-eyebrow {
   color: #0e7490;
 }
 
-.project-card-tech small,
+.landing-copy span {
+  color: #0e7490;
+  font-weight: 600;
+}
+
 .experience-item-icon,
 .welcome-bubble-icon {
   border-color: rgba(14, 116, 144, 0.2);
@@ -3018,15 +3040,10 @@ body {
   color: #0c4f63;
 }
 
-.landing-copy .landing-rotating-text {
-  color: #0e7490;
-  font-weight: 600;
-  background: linear-gradient(
-    transparent 18%,
-    rgba(165, 243, 252, 0.7) 18%,
-    rgba(165, 243, 252, 0.7) 92%,
-    transparent 92%
-  );
+.project-card-tech small {
+  border: 0;
+  background: #f8fafc;
+  color: #475569;
 }
 
 .about-section,
@@ -3039,8 +3056,27 @@ body {
 }
 
 .about-education {
+  border-color: rgba(14, 116, 144, 0.14);
   border-left-color: #0e7490;
-  background: #ecfeff;
+  background: linear-gradient(145deg, #ffffff 0%, #f0fdfa 100%);
+  box-shadow: 0 10px 28px rgba(14, 116, 144, 0.07);
+}
+
+.about-education-label {
+  color: #0e7490;
+}
+
+.about-education strong {
+  color: #0f172a;
+}
+
+.about-education span {
+  color: #475569;
+}
+
+.about-education small {
+  background: rgba(14, 116, 144, 0.08);
+  color: #0e7490;
 }
 
 .project-list,
@@ -3067,15 +3103,20 @@ body {
 }
 
 .tech-group span,
-.project-list button {
+.project-list button,
+.project-card-tech small {
   background: #f8fafc;
   color: #475569;
+}
+
+.experience-detail-tech {
+  color: #0e7490;
+  font-weight: 600;
 }
 
 .project-list button:hover,
 .project-list button:focus,
 .project-list button.is-active,
-.project-slider-nav > button:hover,
 .certificate-list button:hover,
 .contact-button-row a + a:hover,
 .contact-button-row a + a:focus,
@@ -3084,6 +3125,25 @@ body {
   border-color: #0e7490;
   background: #ecfeff;
   color: #0e7490;
+}
+
+.project-slider-dots button {
+  background: #dbe7ef;
+}
+
+.project-slider-dots button.is-active {
+  width: 2.35rem;
+  background: #0e7490;
+}
+
+.project-slider-dots button:hover,
+.project-slider-dots button:focus {
+  background: #94d0e0;
+}
+
+.project-slider-dots button.is-active:hover,
+.project-slider-dots button.is-active:focus {
+  background: #0e7490;
 }
 
 .project-card.is-active {
@@ -3108,6 +3168,21 @@ body {
   border-color: #cbd5e1;
   background: #ffffff;
   color: #0f172a;
+}
+
+.project-slider-nav > button:hover,
+.project-slider-nav > button:focus-visible,
+.project-slider-nav > button:active {
+  border-color: #0e7490;
+  background: #ecfeff;
+  color: #0e7490;
+  box-shadow: 0 0 0 3px rgba(14, 116, 144, 0.18);
+}
+
+.project-slider-nav > button:active {
+  background: #cffafe;
+  box-shadow: 0 0 0 2px rgba(14, 116, 144, 0.14);
+  transform: translateY(0);
 }
 
 .experience-accordion-arrow {

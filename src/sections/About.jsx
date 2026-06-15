@@ -39,11 +39,6 @@ function About() {
             I have a passion for creating, learning, and experimenting with modern web technologies, frameworks, and scalable applications.
           </p>
           <p className="about-statement">Always building, always learning, and never standing still.</p>
-          <div className="about-education">
-            <strong>Bachelor of Science in Computer Engineering</strong>
-            <span>Eastern Samar State University (ESSU)</span>
-            <small>Batch 2025 - 2026</small>
-          </div>
           <a href="#projects" className="about-project-link">
             Recent Projects
           </a>
